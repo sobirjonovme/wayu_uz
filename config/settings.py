@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'phonenumber_field',
+    'celery',
 
     # created apps
     'apps.about',
@@ -121,7 +122,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tashkent'
 
 USE_I18N = True
 
@@ -158,3 +159,11 @@ MEDIA_URL = '/media/'
 
 # CKEditor settings
 CKEDITOR_UPLOAD_PATH = "uploads/"
+
+# set the celery broker url
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+# set the celery result backend
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+# set the celery timezone
+CELERY_TIMEZONE = 'Asia/Tashkent'
+
