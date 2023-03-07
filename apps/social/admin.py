@@ -1,6 +1,12 @@
 from django.contrib import admin
 
-from .models import InstagramPost
+from apps.social import models
+
 
 # Register your models here.
-admin.site.register(InstagramPost)
+class InstagramPostAdmin(admin.ModelAdmin):
+    list_display = ('id', 'link')
+
+
+admin.site.register(models.InstagramPost, InstagramPostAdmin)
+admin.site.register(models.UsefulLink, InstagramPostAdmin)

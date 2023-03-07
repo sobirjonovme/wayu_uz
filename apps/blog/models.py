@@ -7,9 +7,15 @@ from apps.common.models import PostBaseModel
 class Category(models.Model):
     name = models.CharField(max_length=32)
 
+    def __str__(self):
+        return self.name
+
 
 class Tag(models.Model):
     name = models.CharField(max_length=32)
+
+    def __str__(self):
+        return self.name
 
 
 class News(PostBaseModel):
@@ -19,6 +25,9 @@ class News(PostBaseModel):
 class NewsTag(models.Model):
     news = models.ForeignKey(News, on_delete=models.CASCADE, related_name='tags')
     tag = models.ForeignKey(Tag, on_delete=models.CASCADE, related_name='news')
+
+    def __str__(self):
+        return f"{self.news.title} | {self.tag.name}"
 
 
 class Event(PostBaseModel):

@@ -20,6 +20,9 @@ class Branch(models.Model):
     lat = models.FloatField()
     long = models.FloatField()
 
+    def __str__(self):
+        return f"{self.country} | {self.city}"
+
 
 class Representative(PersonBaseModel):
     branch = models.OneToOneField(
@@ -33,3 +36,6 @@ class Sponsor(models.Model):
     description = models.CharField(max_length=64)
     image = ImageField(upload_to='images/')
     link = models.URLField(null=True, blank=True)
+
+    def __str__(self):
+        return self.name
