@@ -13,9 +13,3 @@ def get_insta_posts(username):
     # download and store new posts (last 10 post from user)
     loader.download_user_posts(username)
     print("end")
-
-
-@shared_task(name='get_calculation')
-def calculate(val1, val2):
-    total = val1 + val2
-    return total

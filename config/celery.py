@@ -29,7 +29,7 @@ app.conf.beat_schedule = {
         'task': 'get_instagram_posts',
         # Schedule
         # 'schedule': 20.0,  # in seconds
-        'schedule': crontab(day_of_week=1, hour=1, minute=1),
+        'schedule': crontab(day_of_week=1, hour=0, minute=0),
         # Function Arguments
         'args': ("cristiano",)
     },
